@@ -1,0 +1,7 @@
+{
+  "name": "appEdificio",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

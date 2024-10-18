@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "test-1929a"
+  },
+  "targets": {
+    "appedificio": {
+      "hosting": {
+        "app": [
+          "test-1929a"
+        ]
+      }
+    }
+  }
+}

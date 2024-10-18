@@ -1,0 +1,52 @@
+
+<body id="body">
+  <ion-card>
+    <ion-card-header>
+      <ion-title id="header-main-tittle">{{rango}}</ion-title>
+    </ion-card-header>
+    <!-- <ion-button id="btn-subir-user" color="warning" (click)="goToAltaUser()">Dar usuario de Alta</ion-button> -->
+  </ion-card>
+
+  <ion-row *ngIf="spinnerMostrandose == true" class="item-spinner">
+    <ion-col>
+      <ion-spinner name="crescent" id="loader-spinner"></ion-spinner>
+    </ion-col>
+  </ion-row>
+
+  <ion-content color="warning" *ngIf="spinnerMostrandose == false">
+
+    <ion-card id="main-container">
+      <ion-card id="main-card2" color="warning">
+        <ion-list id="item-list">
+          <ion-item class="user-container" *ngFor="let usuario of usuariosLeidosOrdenados">    
+            <div class="user-info">
+              <img class="user-photo" [src]="usuario.fotoFile" alt="User photo">
+              <div class="user-details">
+                <label class="user-name">{{ usuario.nombre }}</label><br>
+                <label class="user-mail">{{ usuario.mail }}</label><br>
+                <label class="user-dni">DNI: {{ usuario.dni }}</label><br>
+              </div>
+            </div>
+          </ion-item>
+        </ion-list>
+        </ion-card>
+    </ion-card>
+
+  </ion-content>
+</body>
+
+<ion-fab class="redireccionador" vertical="top" horizontal="start" slot="fixed" (click)="logOut()">
+  <ion-fab-button color="warning">
+    <ion-icon name="arrow-back-circle"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+<ion-fab *ngIf="mostrarBotonAgregar" class="redireccionador" vertical="top" horizontal="end" slot="fixed" (click)="goToAltaUser()">
+  <ion-fab-button color="warning">
+    <ion-icon name="add-circle"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+
+
+
+
